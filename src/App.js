@@ -20,6 +20,9 @@ import ForgotPasswordResetComponent from "./components/ForgotPasswordResetCompon
 import PasswordEditComponent from "./components/PasswordEditComponent";
 import UserEditComponent from "./components/UserEditComponent";
 import PreferenceEditComponent from "./components/PreferenceEditComponent";
+import ItemAddComponent from "./components/ItemAddComponent";
+import ItemsArchivedComponent from "./components/ItemsArchivedComponent";
+import ItemsActiveComponent from "./components/ItemsActiveComponent";
 
 function App() {
     return (
@@ -35,6 +38,8 @@ function App() {
                         <Route path="/reestablish" component={ForgotPassComponent}/>
                         <Route path="/userRegister" component={RegisterComponent}/>
                         <Route path="/user" exact component={HomeComponent}/>
+                        <Route path="/items/active" exact component={ItemsActiveComponent}/>
+                        <Route path="/items/archived" exact component={ItemsArchivedComponent}/>
                         <Route path="/item/details/:id" component={ItemDetailsComponent}/>
                         <Route path="/user/forgotPassword/reset" exact component={ForgotPasswordResetComponent}/>
                         <Route path="/car/edit/:id" component={CarEditComponent}/>
@@ -42,6 +47,7 @@ function App() {
                         <Route path="/preference/edit" component={PreferenceEditComponent}/>
                         <Route path="/password/edit" component={PasswordEditComponent}/>
                         <Route path="/user/forgotPassword/change" exact component={ForgotPasswordChangeComponent}/>
+                        <Route path="/item/add" component={ItemAddComponent}/>
                     </Switch>
                 </div>
                 {/* <FooterComponent /> */}

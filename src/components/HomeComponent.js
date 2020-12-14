@@ -31,6 +31,10 @@ class HomeComponent extends Component {
         this.props.history.push('/cars');
     }
 
+    addItem() {
+        this.props.history.push('/item/add');
+    }
+
 
     render() {
         return (
@@ -49,6 +53,9 @@ class HomeComponent extends Component {
                 </h2>
                 <h2>
                     <button className="btn btn-primary" onClick={this.carSave.bind(this)}>add car</button>
+                </h2>
+                <h2>
+                    <button className="btn btn-primary" onClick={this.addItem.bind(this)}>add item</button>
                 </h2>
                 {this.state.user.picUrl ? (
                     <img
