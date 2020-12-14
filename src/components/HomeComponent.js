@@ -27,6 +27,10 @@ class HomeComponent extends Component {
         this.props.history.push('/cars');
     }
 
+    editPassword() {
+        this.props.history.push('/cars');
+    }
+
 
     render() {
         return (
@@ -37,9 +41,9 @@ class HomeComponent extends Component {
                 <h4>phoneNumber - {this.state.user.phoneNumber}</h4>
                 <h4>{this.state.user.about}</h4>
 
-                {/* <h2>
-               <button className="btn-btn-primary" onClick={this.projects}>projects</button>
-            </h2>*/}
+                <h2>
+                    <button className="btn btn-primary" onClick={this.editPassword.bind(this)}>editPassword</button>
+                </h2>
                 <h2>
                     <button className="btn btn-primary" onClick={this.cars.bind(this)}>cars</button>
                 </h2>

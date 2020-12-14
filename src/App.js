@@ -18,6 +18,8 @@ import ForgotPassComponent from "./components/ForgotPassComponent";
 import ForgotPasswordChangeComponent from "./components/ForgotPasswordChangeComponent";
 import ForgotPasswordResetComponent from "./components/ForgotPasswordResetComponent";
 import PasswordEditComponent from "./components/PasswordEditComponent";
+import UserEditComponent from "./components/UserEditComponent";
+import PreferenceEditComponent from "./components/PreferenceEditComponent";
 
 function App() {
     return (
@@ -36,6 +38,8 @@ function App() {
                         <Route path="/item/details/:id" component={ItemDetailsComponent}/>
                         <Route path="/user/forgotPassword/reset" exact component={ForgotPasswordResetComponent}/>
                         <Route path="/car/edit/:id" component={CarEditComponent}/>
+                        <Route path="/user/edit" component={UserEditComponent}/>
+                        <Route path="/preference/edit" component={PreferenceEditComponent}/>
                         <Route path="/password/edit" component={PasswordEditComponent}/>
                         <Route path="/user/forgotPassword/change" exact component={ForgotPasswordChangeComponent}/>
                     </Switch>
