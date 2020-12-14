@@ -16,8 +16,14 @@ class CarsComponent extends Component {
         }
         this.home = this.home.bind(this);
         this.deleteCar = this.deleteCar.bind(this);
+        this.changeData = this.changeData.bind(this);
     }
 
+    componentDidMount() {
+        CarService.cars().then((response) => {
+            this.setState({cars: response.data})
+        });
+    }
     deleteCar(id) {
         CarService.deleteCar(id).then(res => {
             this.setState({cars: this.state.cars.filter(car => car.id !== id)});
@@ -28,11 +34,7 @@ class CarsComponent extends Component {
         this.props.history.push(`/car/edit/${id}`);
     }
 
-    componentDidMount() {
-        CarService.cars().then((response) => {
-            this.setState({cars: response.data})
-        });
-    }
+
 
     home() {
         this.props.history.push('/user');
