@@ -17,7 +17,7 @@ import CarEditComponent from "./components/CarEditComponent";
 import ForgotPassComponent from "./components/ForgotPassComponent";
 import ForgotPasswordChangeComponent from "./components/ForgotPasswordChangeComponent";
 import ForgotPasswordResetComponent from "./components/ForgotPasswordResetComponent";
-import SaveItemComponent from "./components/SaveItemComponent";
+import PasswordEditComponent from "./components/PasswordEditComponent";
 
 function App() {
     return (
@@ -27,7 +27,6 @@ function App() {
                 <Route path="/" exact component={MainComponent}/>
                 <Route path="/car/save" component={SaveCarComponent}/>
                 <Route path="/cars" component={CarsComponent}/>
-                <Route path="/item/save" component={SaveItemComponent}/>
                 <div className="container">
                     <Switch>
                         <Route path="/user/auth" exact component={LoginComponent}/>
@@ -37,6 +36,7 @@ function App() {
                         <Route path="/item/details/:id" component={ItemDetailsComponent}/>
                         <Route path="/user/forgotPassword/reset" exact component={ForgotPasswordResetComponent}/>
                         <Route path="/car/edit/:id" component={CarEditComponent}/>
+                        <Route path="/password/edit" component={PasswordEditComponent}/>
                         <Route path="/user/forgotPassword/change" exact component={ForgotPasswordChangeComponent}/>
                     </Switch>
                 </div>

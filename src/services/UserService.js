@@ -16,12 +16,26 @@ class UserService {
         return axios.get('/user/forgotPassword/' + email)
     }
 
-    register(userRegister) {
-        return axios.post('/user', userRegister);
-    }
+
     forgotPasswordChange(forgotPasswordDto) {
         return axios.put('/user/forgotPassword/change', forgotPasswordDto);
     }
+
+    forgotPasswordReset(email, otp) {
+        return axios.get('/forgotPassword/reset?email=' + email + '&otp=' + otp)
+            .then(res => {
+                localStorage.setItem('email', res.data.email)
+                localStorage.setItem('otp', res.data.otp)
+            })
+            .catch(err => {
+                console.log()
+            })
+    }
+
+    register(userRegister) {
+        return axios.post('/user', userRegister);
+    }
+
 
     login(user) {
         return axios.post('/user/auth', user)
@@ -34,15 +48,32 @@ class UserService {
             })
     }
 
-    forgotPasswordReset(email, otp) {
-        return axios.get('/user/forgotPassword/reset?email=' + email + '&otp=' + otp)
-            .then(res => {
-                localStorage.setItem('email', res.data.email)
-                localStorage.setItem('otp', res.data.otp)
-            })
-            .catch(err => {
-                console.log()
-            })
+
+    delete() {
+        return axios({
+            method: 'delete', url: '/user',
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('token')
+            }
+        })
+    }
+
+    dataChange(userChangeDto) {
+        return axios({
+            method: 'put', url: '/user', data: userChangeDto,
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('token')
+            }
+        })
+    }
+
+    passwordChange(passwordChangeDto) {
+        return axios({
+            method: 'put', url: '/user/password/change', data: passwordChangeDto,
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('token')
+            }
+        })
     }
 
 

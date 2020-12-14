@@ -11,14 +11,16 @@ class ForgotPasswordResetComponent extends Component {
         super(props)
 
         this.state = {
-            email:  new URLSearchParams(this.props.location.search).get('email'),
-            otp: new URLSearchParams(this.props.location.search).get('otp'),
+            email: this.props.match.params.email,
+            otp: this.props.match.params.otp,
         }
     }
 
     componentDidMount() {
-
-        console.log(this.state.otp + "  email :" + JSON.stringify(this.state.email))
+        let emailAndOtp = {
+            email: this.state.email, otp: this.state.otp
+        };
+        console.log( this.props.match.params.email+"emailAndOtp" + JSON.stringify(emailAndOtp))
         UserService.forgotPasswordReset(this.state.email, this.state.otp).then(() => {
             this.props.history.push('/user/forgotPassword/change');
         });
