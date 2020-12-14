@@ -51,7 +51,6 @@ class ItemsActiveComponent extends Component {
                         <td> type</td>
                         <td> price</td>
                         <td> numberOfPassengers</td>
-                        <td> car</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -65,7 +64,6 @@ class ItemsActiveComponent extends Component {
                                     <td> {item.type}</td>
                                     <td> {item.price}</td>
                                     <td> {item.numberOfPassengers}</td>
-                                    <td> {item.car.carBrand}</td>
 
                                     <td>
                                         <button style={{margin: "10px"}} onClick={() => this.Archived(item.id)}

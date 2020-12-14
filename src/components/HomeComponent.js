@@ -19,19 +19,38 @@ class HomeComponent extends Component {
         });
     }
 
-    carSave() {
-        this.props.history.push('/car/save');
+    carAdd() {
+        this.props.history.push('/car/add');
     }
-
     cars() {
         this.props.history.push('/cars');
     }
 
-    editPassword() {
-        this.props.history.push('/cars');
+    addItem() {
+        this.props.history.push('/item/add');
     }
 
-    addItem() {
+    itemsActive() {
+        this.props.history.push('/items/active');
+    }
+
+    itemsArchived() {
+        this.props.history.push('/items/archived');
+    }
+
+    userEdit() {
+        this.props.history.push('/user/edit');
+    }
+
+    preferenceEdit() {
+        this.props.history.push('/preference/edit');
+    }
+
+    passwordEdit() {
+        this.props.history.push('/password/edit');
+    }
+
+    itemAdd() {
         this.props.history.push('/item/add');
     }
 
@@ -45,17 +64,34 @@ class HomeComponent extends Component {
                 <h4>phoneNumber - {this.state.user.phoneNumber}</h4>
                 <h4>{this.state.user.about}</h4>
 
-                <h2>
-                    <button className="btn btn-primary" onClick={this.editPassword.bind(this)}>editPassword</button>
-                </h2>
+
                 <h2>
                     <button className="btn btn-primary" onClick={this.cars.bind(this)}>cars</button>
                 </h2>
                 <h2>
-                    <button className="btn btn-primary" onClick={this.carSave.bind(this)}>add car</button>
+                    <button className="btn btn-primary" onClick={this.carAdd.bind(this)}>add car</button>
                 </h2>
                 <h2>
                     <button className="btn btn-primary" onClick={this.addItem.bind(this)}>add item</button>
+                </h2>
+                <h2>
+                    <button className="btn btn-primary" onClick={this.itemsActive.bind(this)}>items active</button>
+                </h2>
+                <h2>
+                    <button className="btn btn-primary" onClick={this.itemsArchived.bind(this)}>items archived</button>
+                </h2>
+                <h2>
+                    <button className="btn btn-primary" onClick={this.userEdit.bind(this)}>user data edit</button>
+                </h2>
+                <h2>
+                    <button className="btn btn-primary" onClick={this.preferenceEdit.bind(this)}>preference edit
+                    </button>
+                </h2>
+                <h2>
+                    <button className="btn btn-primary" onClick={this.passwordEdit.bind(this)}>password Edit</button>
+                </h2>
+                <h2>
+                    <button className="btn btn-primary" onClick={this.itemAdd.bind(this)}>item add</button>
                 </h2>
                 {this.state.user.picUrl ? (
                     <img

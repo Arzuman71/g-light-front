@@ -132,6 +132,8 @@ class ItemAddComponent extends Component {
                                                value={this.state.startDate} onChange={this.startDateHandler}/>
                                     </div>
                                     <div className=" col-md-6 offset-md-3">
+                                        <label> car: </label>
+
                                         <select className="form-control" name="carId" value={this.state.selectValue}
                                                 onChange={this.carIdHandler}>
                                             {this.state.cars.map(
@@ -141,7 +143,7 @@ class ItemAddComponent extends Component {
                                         </select>
                                     </div>
 
-                                    <button className="btn btn-success" onClick={this.save}> Save</button>
+                                    <button className="btn btn-success" onClick={this.save}> Add</button>
                                 </form>
                             </div>
                         </div>

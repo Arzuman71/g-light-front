@@ -43,7 +43,7 @@ class ItemsArchivedComponent extends Component {
     render() {
         return (
             <div>
-                <h1 className="text-center">items Active</h1>
+                <h1 className="text-center">items Archived</h1>
                 <div className="row">
                     <button className="btn-btn-primary" onClick={this.home}>Home</button>
                 </div>
@@ -57,7 +57,6 @@ class ItemsArchivedComponent extends Component {
                         <td> type</td>
                         <td> price</td>
                         <td> numberOfPassengers</td>
-                        <td> car</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -71,7 +70,6 @@ class ItemsArchivedComponent extends Component {
                                     <td> {item.type}</td>
                                     <td> {item.price}</td>
                                     <td> {item.numberOfPassengers}</td>
-                                    <td> {item.car.carBrand}</td>
 
                                     <td>
                                         <button style={{margin: "10px"}} onClick={() => this.Active(item.id)}

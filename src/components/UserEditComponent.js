@@ -83,7 +83,7 @@ class UserEditComponent extends Component {
                                                value={this.state.surname} onChange={this.changeSurnameHandler}/>
                                     </div>
                                     <div className="form-group">
-                                        <label> ConfirmPassword: </label>
+                                        <label> About: </label>
                                         <input type="textarea" name="about" className="form-control"
                                                value={this.state.about} onChange={this.aboutHandler}/>
                                     </div>

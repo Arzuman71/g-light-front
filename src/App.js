@@ -30,7 +30,7 @@ function App() {
             <Router>
                 <Route exact component={HeaderComponent}/>
                 <Route path="/" exact component={MainComponent}/>
-                <Route path="/car/save" component={SaveCarComponent}/>
+                <Route path="/car/add" component={SaveCarComponent}/>
                 <Route path="/cars" component={CarsComponent}/>
                 <div className="container">
                     <Switch>
