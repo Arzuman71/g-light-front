@@ -4,7 +4,6 @@ import UserService from '../services/UserService';
 
 class HomeComponent extends Component {
 
-
     constructor(props) {
         super(props)
 
