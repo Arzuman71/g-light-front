@@ -25,7 +25,7 @@ class ItemAddComponent extends Component {
     }
 
 
-    Home() {
+    home() {
         this.props.history.push('/user');
     }
 
@@ -78,7 +78,7 @@ class ItemAddComponent extends Component {
     render() {
         return (
             <div>
-                <button className="btn btn-danger" onClick={this.Home.bind(this)}
+                <button className="btn btn-danger" onClick={this.home.bind(this)}
                         style={{marginLeft: "10px"}}>Home
                 </button>
                 <div className="container inner-form">
@@ -95,8 +95,6 @@ class ItemAddComponent extends Component {
                                             <option value="DEFAULT" disabled>Choose a Type</option>
                                             <option value="CAR_DRIVER">CAR_DRIVER</option>
                                             <option value="TRUCK_DRIVER">TRUCK_DRIVER</option>
-                                            <option value="PASSENGER">PASSENGER</option>
-                                            <option value="SEEKER_TRUCK">SEEKER_TRUCK</option>
                                         </select>
                                     </div>
 

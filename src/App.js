@@ -23,6 +23,7 @@ import PreferenceEditComponent from "./components/PreferenceEditComponent";
 import ItemAddComponent from "./components/ItemAddComponent";
 import ItemsArchivedComponent from "./components/ItemsArchivedComponent";
 import ItemsActiveComponent from "./components/ItemsActiveComponent";
+import ItemEditComponent from "./components/ItemEditComponent";
 
 function App() {
     return (
@@ -43,6 +44,7 @@ function App() {
                         <Route path="/item/details/:id" component={ItemDetailsComponent}/>
                         <Route path="/user/forgotPassword/reset" exact component={ForgotPasswordResetComponent}/>
                         <Route path="/car/edit/:id" component={CarEditComponent}/>
+                        <Route path="/item/edit/:id" component={ItemEditComponent}/>
                         <Route path="/user/edit" component={UserEditComponent}/>
                         <Route path="/preference/edit" component={PreferenceEditComponent}/>
                         <Route path="/password/edit" component={PasswordEditComponent}/>

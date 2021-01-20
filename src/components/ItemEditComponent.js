@@ -18,7 +18,6 @@ class ItemEditComponent extends Component {
             numberOfPassengers: '',
             cars: []
         }
-        this.deleteCar = this.deleteCar.bind(this);
     }
 
 
@@ -85,13 +84,13 @@ class ItemEditComponent extends Component {
     render() {
         return (
             <div>
-                <button className="btn btn-danger" onClick={this.Home.bind(this)}
+                <button className="btn btn-danger" onClick={this.home.bind(this)}
                         style={{marginLeft: "10px"}}>Home
                 </button>
                 <div className="container inner-form">
                     <div className="rov">
                         <div className="card col-md-6 offset-md-3 offset-md-3">
-                            <h3 className="text-center">Add item</h3>
+                            <h3 className="text-center">Edit item</h3>
                             <div className="card-body">
                                 <form>
                                     <div className="form-group">
@@ -102,8 +101,6 @@ class ItemEditComponent extends Component {
                                             <option value="DEFAULT" disabled>{this.state.type}</option>
                                             <option value="CAR_DRIVER">CAR_DRIVER</option>
                                             <option value="TRUCK_DRIVER">TRUCK_DRIVER</option>
-                                            <option value="PASSENGER">PASSENGER</option>
-                                            <option value="SEEKER_TRUCK">SEEKER_TRUCK</option>
                                         </select>
                                     </div>
 
@@ -139,7 +136,7 @@ class ItemEditComponent extends Component {
                                         <label> car: </label>
                                         <select defaultValue={this.state.carBrand} className="form-control" name="carId"
                                                 value={this.state.selectValue}
-                                                onChange={this.changeProjectsIdHandler}>
+                                                onChange={this.carIdHandler}>
                                             <option value="DEFAULT" disabled>{this.state.carBrand}</option>
                                             {this.state.cars.map(
                                                 car =>

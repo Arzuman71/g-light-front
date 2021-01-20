@@ -131,8 +131,6 @@ class MainComponent extends Component {
                                     <option placeholder="">Choose a Type</option>
                                     <option value="CAR_DRIVER">CAR_DRIVER</option>
                                     <option value="TRUCK_DRIVER">TRUCK_DRIVER</option>
-                                    <option value="PASSENGER">PASSENGER</option>
-                                    <option value="SEEKER_TRUCK">SEEKER_TRUCK</option>
                                 </select>
                             </div>
                             <div className="input-field fifth-wrap">

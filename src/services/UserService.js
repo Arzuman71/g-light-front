@@ -76,6 +76,16 @@ class UserService {
         })
     }
 
+    changeAvatar(formData) {
+        return axios({
+            method: 'post', url: '/user/avatar', formData,
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('token'),
+                "Content-Type": "multipart/form-data"
+            }
+        })
+    }
+
 
 }
 

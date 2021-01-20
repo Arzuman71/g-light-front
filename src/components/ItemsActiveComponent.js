@@ -39,7 +39,7 @@ class ItemsActiveComponent extends Component {
             <div>
                 <h1 className="text-center">items Active</h1>
                 <div className="row">
-                    <button className="btn-btn-primary" onClick={this.home}>Home</button>
+                    <button className="btn btn-primary" onClick={this.home}>Home</button>
                 </div>
 
                 <table className="table table-striped">
