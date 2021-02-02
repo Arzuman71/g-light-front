@@ -9,7 +9,6 @@ class ForgotPasswordChangeComponent extends Component {
 
         this.state = {
             password: '',
-            confirmPassword: '',
             email: localStorage.getItem('email'),
             otp: localStorage.getItem('otp')
         }
@@ -19,9 +18,10 @@ class ForgotPasswordChangeComponent extends Component {
     changePassword = (e) => {
         e.preventDefault();
         let forgotPasswordDto = {
-            email: this.state.email, password: this.state.password,
-            confirmPassword: this.state.confirmPassword, otp: this.state.otp
+            email: this.state.email,
+            password: this.state.password, otp: this.state.otp
         };
+
         UserService.forgotPasswordChange(forgotPasswordDto).then(() => {
             this.props.history.push('/');
         });
@@ -31,9 +31,6 @@ class ForgotPasswordChangeComponent extends Component {
 
     passwordHandler = (event) => {
         this.setState({password: event.target.value});
-    }
-    confirmPasswordHandler = (event) => {
-        this.setState({confirmPassword: event.target.value});
     }
 
     render() {
@@ -49,12 +46,6 @@ class ForgotPasswordChangeComponent extends Component {
                                         <label> New Password: </label>
                                         <input type="password" name="password" className="form-control"
                                                value={this.state.password} onChange={this.passwordHandler}/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label> ConfirmPassword: </label>
-                                        <input type="password" name="confirmPassword" className="form-control"
-                                               value={this.state.confirmPassword}
-                                               onChange={this.confirmPasswordHandler}/>
                                     </div>
                                     <button className="btn btn-success" onClick={this.changePassword}> Register</button>
                                 </form>

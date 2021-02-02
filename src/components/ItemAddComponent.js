@@ -39,7 +39,7 @@ class ItemAddComponent extends Component {
         e.preventDefault();
         let item = {
             end: this.state.end, outset: this.state.outset, startDate: this.state.startDate,
-            type: this.state.type, price: this.state.price, carId: this.state.carId,
+            type: this.state.type, price: this.state.price, carId: 8,
             numberOfPassengers: this.state.numberOfPassengers,
         };
         console.log('item => ' + JSON.stringify(item));

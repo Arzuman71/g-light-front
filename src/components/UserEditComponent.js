@@ -9,10 +9,10 @@ class UserEditComponent extends Component {
         super(props)
 
         this.state = {
+            email: '',
             name: '',
             surname: '',
             age: '',
-            about: '',
             gender: '',
             picUrl: ''
         }
@@ -26,7 +26,7 @@ class UserEditComponent extends Component {
             this.setState({name: res.data.name})
             this.setState({surname: res.data.surname})
             this.setState({age: res.data.age})
-            this.setState({about: res.data.about})
+            this.setState({email: res.data.email})
             this.setState({gender: res.data.gender})
         });
 
@@ -40,7 +40,7 @@ class UserEditComponent extends Component {
         e.preventDefault();
         let user = {
             name: this.state.name, surname: this.state.surname,
-            about: this.state.about, age: this.state.age,
+            email: this.state.email, age: this.state.age,
             gender: this.state.gender
         };
         UserService.dataChange(user).then(() => {
@@ -56,9 +56,6 @@ class UserEditComponent extends Component {
     }
     changeSurnameHandler = (event) => {
         this.setState({surname: event.target.value});
-    }
-    aboutHandler = (event) => {
-        this.setState({about: event.target.value});
     }
     changeGenderHandler = (event) => {
         this.setState({gender: event.target.value});
@@ -86,8 +83,13 @@ class UserEditComponent extends Component {
             <div className="container">
                 <div className="rov">
                     <div className="card col-md-6 offset-md-3 offset-md-3">
+                        <div className="form-group">
+                            <label> email: </label>
+                            <input  className="form-control"
+                                   value={this.state.email} />
+                        </div>
                         <h3 className="text-center">Edit</h3>
-                        <div className="form-grup">
+                        <div className="form-group">
                             <form>
                                 <libel> Name:</libel>
                                 <input type="file" name="name" className="form-control"
@@ -108,11 +110,7 @@ class UserEditComponent extends Component {
                                     <input placeholder="Surname" name="surname" className="form-control"
                                            value={this.state.surname} onChange={this.changeSurnameHandler}/>
                                 </div>
-                                <div className="form-group">
-                                    <label> About: </label>
-                                    <input type="textarea" name="about" className="form-control"
-                                           value={this.state.about} onChange={this.aboutHandler}/>
-                                </div>
+
                                 <div className="form-group">
                                     <label> gender: </label>
                                     <select defaultValue={this.state.gender} name="gender" className="form-control"

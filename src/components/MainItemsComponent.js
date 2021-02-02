@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
-import flatpickr from 'flatpickr';
-import Choices from 'choices.js';
 import 'react-materialize';
 import 'materialize-css';
 import '../main.css';
-import MainService from "../services/MainService";
 
 
 class MainItemsComponent extends Component {

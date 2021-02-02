@@ -12,7 +12,6 @@ class RegisterComponent extends Component {
          name: '',
          surname: '',
          password: '',
-         confirmPassword: '',
          email: '',
          gender: ''
       }
@@ -25,7 +24,7 @@ class RegisterComponent extends Component {
       let user = {
          name: this.state.name, surname: this.state.surname,
          email: this.state.email, password: this.state.password,
-         confirmPassword: this.state.confirmPassword, gender: this.state.gender
+          gender: this.state.gender
       };
       UserService.register(user).then(() => {
          this.props.history.push('/');
@@ -43,9 +42,6 @@ class RegisterComponent extends Component {
    }
    changePasswordHandler = (event) => {
       this.setState({ password: event.target.value });
-   }
-   changeConfirmPasswordHandler = (event) => {
-      this.setState({ confirmPassword: event.target.value });
    }
    changeGenderHandler = (event) => {
       this.setState({ gender: event.target.value });
@@ -78,11 +74,6 @@ class RegisterComponent extends Component {
                               <label> Password: </label>
                               <input type="password" name="password" className="form-control"
                                  value={this.state.password} onChange={this.changePasswordHandler} />
-                           </div>
-                           <div className="form-group">
-                              <label> ConfirmPassword: </label>
-                              <input type="password" name="confirmPassword" className="form-control"
-                                 value={this.state.confirmPassword} onChange={this.changeConfirmPasswordHandler} />
                            </div>
                            <div className="form-group">
                               <label> gender: </label>

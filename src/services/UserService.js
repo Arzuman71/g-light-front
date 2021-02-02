@@ -11,7 +11,7 @@ class UserService {
             }
         })
     }
-
+//+
     forgotPass(email) {
         return axios.get('/user/forgotPassword/' + email)
     }
